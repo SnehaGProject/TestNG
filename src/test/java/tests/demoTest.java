@@ -12,4 +12,11 @@ public class demoTest extends baseClass {
        test.assignCategory("sanity");
        Assert.assertTrue(true);
    }
+
+    @Test(priority = 2, groups={"sanity"})
+    public void testingCategory(){
+        test.assignCategory("sanity");
+        Assert.assertTrue(true);
+    }
+
 }
