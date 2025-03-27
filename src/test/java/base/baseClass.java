@@ -29,8 +29,8 @@ public class baseClass {
 
 
     //for extent reports
-    public ExtentReports extent ;
-    public ExtentTest test;
+    public static ExtentReports extent ;
+    public static  ExtentTest test;
 
     // for extent Reports
     @BeforeSuite
@@ -43,7 +43,8 @@ public class baseClass {
 
     @BeforeTest
     public void setUp() {
-         prop = new configReader();
+
+        prop = new configReader();
     }
 
     @BeforeClass
@@ -57,7 +58,7 @@ public class baseClass {
     }
 
     @BeforeMethod
-    public void beforeMethod(Method method) {
+    public void beforeMethod(Method method ) {
         test = extent.createTest(method.getName());
         String browser = prop.getProperty("browser");
         if (browser.equalsIgnoreCase("chrome")) {
